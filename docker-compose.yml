@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    container_name: ${APP_NAME}
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    ports:
+      - ${APP_DB_PORT}:1433
+    environment:
+      MSSQL_SA_PASSWORD: ${APP_DB_SA_PASS}
+      ACCEPT_EULA: Y
+      MSSQL_LCID: 1046
+      MSSQL_MEMORY_LIMIT_MB: ${APP_MEMORY_MAX_LIMIT}
+    volumes:
+      - db_data:/var/opt/mssql/data
+      - ./logs:/var/opt/mssql/log
+
+volumes:
+  db_data:
