@@ -2,7 +2,7 @@
 
 In this project have a container about sql server 2017 for developer.
 
-## Before uou beginner
+## Before you beginner
 
 Need to create a file called `.env`, your template is the fiel `.env.modelo`. Replace variables in the document.
 
